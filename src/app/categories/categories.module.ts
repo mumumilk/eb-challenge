@@ -5,9 +5,13 @@ import { CategoryService } from './shared/category.service';
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
-    declarations: [ CategoriesComponent ],
+    declarations: [
+        CategoriesComponent,
+        CategoryListComponent
+    ],
     imports: [
         CommonModule,
         SharedModule,

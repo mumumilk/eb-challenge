@@ -1,0 +1,14 @@
+a {
+    text-decoration: none;
+    font-weight: 400;
+    color: white;
+}
+
+div:hover {
+    background: rgba(255,255,255,.08);
+}
+
+.border {
+    border-left: 7px solid #4896F9;
+    padding-left: 7px !important;
+}

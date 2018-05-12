@@ -1,0 +1,29 @@
+.background {
+    width: 100%;
+    height: 35vh;
+    padding-left: 10%;
+    background-image: url('/assets/img/desk-blue.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 100% 30%;
+    
+}
+
+.overlay {
+    width: 100%;
+    height: 35vh;
+    background: linear-gradient(to left, rgba(255,0,0,0), rgba(29, 135, 220) 50% );
+    opacity: 0.8;
+    position: absolute;
+    margin-left: -10%
+}
+
+h1 {
+    font-size: 4em;
+    letter-spacing: 1px;
+    color: white;
+    font-family: 'Google Sans',sans-serif;
+    font-weight: 500;
+    line-height: 72px;
+    z-index: 99;
+}
