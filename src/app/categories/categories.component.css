@@ -1,0 +1,20 @@
+.drawer-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.drawer-menu {
+    min-width: 240px;
+    background: #19212b;
+}
+
+.drawer-menu-toolbar {
+    background: #404854;
+    color: white;
+}
+
+button {
+    position: absolute;
+    padding: 25px;
+    z-index: 99;
+}

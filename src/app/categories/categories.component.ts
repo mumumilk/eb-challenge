@@ -1,36 +1,36 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { CategoryService } from './shared/category.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Category } from './shared/category.model';
+import { ObservableMedia, MediaChange } from '@angular/flex-layout';
+import { MatDrawer } from '@angular/material';
 
 @Component({
     selector: 'app-categories',
-    template: `
-        <mat-drawer-container [style.width.vw]="100" [style.height.vh]="100">
-            <mat-drawer mode="side" opened="true" [style.min-width.px]="240" class="mat-elevation-z1" [style.background]="'#19212b'">
-                <mat-toolbar fxLayoutAlign="center center" [style.background]="'#404854'" [style.color]="'white'">Categorias</mat-toolbar>
-                <app-category-list [categories]="categories"></app-category-list>
-            </mat-drawer>
-            <mat-drawer-content>
-                <router-outlet></router-outlet>
-            </mat-drawer-content>
-        </mat-drawer-container>
-    `
+    templateUrl: 'categories.component.html',
+    styleUrls: ['categories.component.css']
 })
 export class CategoriesComponent implements OnInit, OnDestroy {
     categories: Category[];
     categoriesSubs: Subscription;
 
+    isMobile = false;
+
+    mediaSubs: Subscription;
+
     constructor(
-        private categoryService: CategoryService
+        private categoryService: CategoryService,
+        private media: ObservableMedia
     ) { }
 
     ngOnInit(): void {
         this.categoriesSubs = this.getCategoriesSubscription();
+        this.mediaSubs = this.getMediaSubscription();
     }
 
     ngOnDestroy(): void {
         if (this.categoriesSubs) { this.categoriesSubs.unsubscribe(); }
+        if (this.mediaSubs) { this.mediaSubs.unsubscribe(); }
     }
 
     getCategoriesSubscription(): Subscription {
@@ -40,5 +40,11 @@ export class CategoriesComponent implements OnInit, OnDestroy {
             .subscribe((categories: Category[]) => {
                 this.categories = categories;
             });
+    }
+
+    getMediaSubscription(): Subscription {
+        return this.media.subscribe((change: MediaChange) => {
+            this.isMobile = change.mqAlias === 'xs';
+        });
     }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CategoriesComponent } from './categories.component';
+import { AuthGuardService } from '../shared/services/auth-guard.service';
 
 const routes: Routes = [
     {
@@ -10,6 +11,7 @@ const routes: Routes = [
         children: [
             {
                 path: ':category_id',
+                canActivate: [ AuthGuardService ],
                 children: [
                     {
                         path: '',

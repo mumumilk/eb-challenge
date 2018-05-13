@@ -7,16 +7,12 @@ import { DomSanitizer } from '@angular/platform-browser';
     templateUrl: './course-card.component.html',
     styleUrls: ['./course-card.component.css']
 })
-export class CourseCardComponent implements OnInit {
+export class CourseCardComponent {
     @Input() course: Course;
 
     constructor(
         private sanitizer: DomSanitizer
     ) { }
-
-    ngOnInit(): void {
-        console.log(this.course);
-    }
 
     getImage(url: string) {
         return this.sanitizer.bypassSecurityTrustStyle(`url(${url})`);

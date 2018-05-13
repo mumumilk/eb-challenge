@@ -4,11 +4,14 @@ a {
     color: white;
 }
 
+div {
+    border-left: 7px solid transparent;
+}
+
 div:hover {
     background: rgba(255,255,255,.08);
 }
 
 .border {
     border-left: 7px solid #4896F9;
-    padding-left: 7px !important;
 }

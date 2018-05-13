@@ -1,5 +1,5 @@
-<div  *ngFor="let category of categories" fxLayout="column" fxLayoutAlign="center start" [style.padding.px]="20" [class.border]="true">
-    <a routerLinkActive #rl=routerLinkActive [routerLink]="category.category_id">
+<div  *ngFor="let category of categories" fxLayout="column" fxLayoutAlign="center start" [style.padding.px]="20" [class.border]="rl.isActive">
+    <a routerLinkActive #rl=routerLinkActive [routerLink]="category.category_id" (click)="setCategory(category)">
         {{category.title}}
     </a>
 </div>

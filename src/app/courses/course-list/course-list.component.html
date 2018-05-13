@@ -1,3 +1,3 @@
-<div fxFlex fxLayout="row wrap" fxLayoutAlign="start start">
+<div fxFlex fxLayout="row wrap" [fxLayoutAlign]="isMobile ? 'center start' : 'start start'">
     <app-course-card *ngFor="let course of courses" [course]="course"></app-course-card>
 </div>
