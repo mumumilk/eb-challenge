@@ -1,0 +1,24 @@
+h2 {
+    text-align: center;
+}
+
+.card-container {
+    max-width: 296px;
+    min-width: 295px;
+}
+  
+.card-image {
+    background-size: cover;
+    height: 150px;
+    background-position: 50% 50%;
+}
+
+.card-title {
+    min-height: 75px;
+}
+
+.card-description {
+    min-height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+}

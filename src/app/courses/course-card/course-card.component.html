@@ -1,0 +1,10 @@
+<mat-card class="card-container">
+    <div mat-card-image class="card-image" [style.background-image]="getImage(course.logo_url)"></div>
+    <mat-card-content>
+        <h2 class="card-title">{{course.title | truncate:50:true}}</h2>
+        <div class="card-description" [innerHTML]="course.description ? course.description : '<p><i>sem descrição</i></p>'"></div>
+    </mat-card-content>
+    <mat-card-actions fxFlex fxLayout="row" fxLayoutAlign="center center">
+        <button mat-button color="primary">VER MAIS</button>
+    </mat-card-actions>
+</mat-card>

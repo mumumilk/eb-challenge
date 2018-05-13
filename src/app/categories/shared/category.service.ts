@@ -3,7 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Category } from './category.model';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
-import { map } from 'rxjs/operators/map';
 
 @Injectable()
 export class CategoryService {

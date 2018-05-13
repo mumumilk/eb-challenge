@@ -9,3 +9,9 @@ body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     color: #222222;
 }
+
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
